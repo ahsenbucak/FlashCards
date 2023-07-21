@@ -23,87 +23,98 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>ABOUT US</string>
   </property>
-  <widget class="QLabel" name="background">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>300</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>400</width>
-     <height>300</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>400</width>
-     <height>300</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgb(228,179,136);
-color:rgb(170,0,0);</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;This game was made by&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ahsen Bucak&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>40</y>
-     <width>101</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image:url(:/logo/logo2.jpeg);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
   <widget class="QPushButton" name="ok_button">
    <property name="geometry">
     <rect>
      <x>300</x>
      <y>260</y>
-     <width>75</width>
-     <height>23</height>
+     <width>93</width>
+     <height>28</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{
-       background-color:rgb(135,185,225);
-
+    <string notr="true">QPushButton{border-color: rgb(5, 119, 161);
+background-color:rgb(135, 185, 225);
+border-style: solid;
+border-width: 1px;
+border-radius:10px;
+color: rgb(170, 0, 0);
 }
 QPushButton::hover{
-       background-color:rgb(5,119,161);
+background-color:rgb(5, 119, 161);
+color:white;
 }
 QPushButton::pressed{
-       background-color:rgb(36,83,109);
-       padding-left:5px;
-       padding-top:5px;
-       color: rgb(255, 255, 255);
- }</string>
+padding-left:5px;
+padding-top:5px;
+	
+background-color: rgb(36, 83, 109);
+}
+
+</string>
    </property>
    <property name="text">
     <string>OK</string>
    </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
   </widget>
+  <widget class="QLabel" name="background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(184, 217, 138);
+color: rgb(170, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;This game was made by &lt;/p&gt;&lt;p&gt;Yunus Emre ALTINIŞIK&lt;/p&gt;&lt;p&gt;Şeyma SATAR &lt;/p&gt;&lt;p&gt;Ahsen BUCAK&lt;/p&gt;&lt;p&gt;Elif ŞAHİN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo_label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>10</y>
+     <width>91</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/logo/logo2.jpeg);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>background</zorder>
+  <zorder>ok_button</zorder>
+  <zorder>logo_label</zorder>
  </widget>
  <resources>
-  <include location="logo.qrc"/>
+  <include location="../logo/logo.qrc"/>
  </resources>
  <connections/>
 </ui>
