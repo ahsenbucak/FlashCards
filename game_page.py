@@ -8,21 +8,23 @@ class GameWindow(QtWidgets.QMainWindow):
         self.object=object
         self.game=Game(self.object)
         self.game.starting_time()
-        self.true_button.setEnable(False)
-        self.false_button.setEnabled(False)
+        # self.true_button.setEnabled(False)
+        # self.false_button.setEnabled(False)
         super(GameWindow,self).__init__()
         uic.loadUi('ui/play_ui.ui',self)
         self.back_button.clicked.connect(self.menu_show)
         self.true_button.clicked.connect(self.true_button_function)
         self.false_button.clicked.connect(self.false_button_fuction)
         self.exit_button.clicked.connect(self.exit)
+        self.level_label.setText("LEVEL"+str(self.game.level))
+        self.words_level.setProperty('Value', str(self.game.true_number))
         self.timer_
         self.show()
 
     def menu_show(self):
-        self.cams=menu_page.MainWindow()
+        self.cams=menu_page.MainWindow(self.object)
         self.passedTime=int(self.game.totalTime())
-        self.object.registerUserStat(self.object.level,self.passedTime)
+        self.object.registerUserStat(self.game.level,self.passedTime)
         self.cams.show()
         self.close()
 
@@ -31,13 +33,13 @@ class GameWindow(QtWidgets.QMainWindow):
         self.totalTry_num=self.game.attempts_number
         self.languages.setText("NEDERLANDS")
         self.cards.setStyleSheet("border-color: rgb(170, 85, 0);\nbackground-color:rgb(5, 119, 161);\nborder-style: solid;\nborder-width: 3px;\nborder-radius:50px;")
-        self.true_button.setEnable(False)
+        self.true_button.setEnabled(False)
         self.false_button.setEnabled(False)
-        self.words_level.setProperty('Value',self.true_num)
+        self.words_level.setProperty('Value',self.game.true_number)
         self.words.setText(self.word_nl)
-        self.true_score.setText(self.true_num)
+        self.true_score.setText(str(self.true_num))
         self.total_try.setText(str(self.totalTry_num))
-        self.level_label.setText("LEVEL"+str(self.object.level))
+        self.level_label.setText("LEVEL"+str(self.game.level))
 
     def en_word(self,en):
         self.en=en
@@ -48,7 +50,7 @@ class GameWindow(QtWidgets.QMainWindow):
     def update(self):
         self.timer_label.setText(str(self.count))
         if self.count==0:
-            self.true_button.setEnable(True)
+            self.true_button.setEnabled(True)
             self.false_button.setEnabled(True)
             self.timer.stop()
             self.en_word(self.word_en)
@@ -74,5 +76,5 @@ class GameWindow(QtWidgets.QMainWindow):
 
     def exit(self):
         self.passedTime=int(self.game.totalTime())
-        self.object.registerUserStat(self.object.level, self.passedTime)
+        self.object.registerUserStat(self.game.level, self.passedTime)
         self.close()
