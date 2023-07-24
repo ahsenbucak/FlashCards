@@ -36,7 +36,7 @@ class Game:
         if self.true_number==20:
             self.object.level +=1
             self.totalTime()
-            self.object.registerUserStat(self.object,self.total_time)
+            self.object.registerUserStat(self.level, self.total_time)
             self.starting_time()
             self.word_list=self.words()
             self.true_number=0
@@ -57,8 +57,8 @@ class Game:
         self.word_list.append(self.false_word)
 
 
-user1=User("User")
-game1=Game(user1)
+# user1=User("User")
+# game1=Game(user1)
 
 #Controlling totalTime()
 # game1.starting_time()
@@ -73,15 +73,15 @@ game1=Game(user1)
 # game1.true()
 # print(game1.show_words())
 
-game1.starting_time()
-game1.true()
-print(game1.show_words())
-game1.false()
-game1.total_attempt_number()
-print(game1.show_words())
-print(game1.word_list)
-print(game1.attempts_number)
+# game1.starting_time()
+# game1.true()
+# print(game1.show_words())
+# game1.false()
+# game1.total_attempt_number()
+# print(game1.show_words())
+# print(game1.word_list)
+# print(game1.attempts_number)
 
-time.sleep(1)
-print(game1.totalTime())
+# time.sleep(1)
+# print(game1.totalTime())
 

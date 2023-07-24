@@ -22,6 +22,7 @@ class LoginWindow(QtWidgets.QMainWindow):
         self.cams=menu_page.MainWindow(self.object)
         self.cams.show()
         self.close()
+        
     def about_show(self):
         self.cams=about_page.AboutWindow()
         self.cams.show()
