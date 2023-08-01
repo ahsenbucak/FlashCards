@@ -10,19 +10,19 @@ class User:
         self.totalTime='00:00:00'
 
     def login(self):
-        if not os.path.exists("users/{}.json".format(self.name)):
+        if not os.path.exists("user/{}.json".format(self.name)):
             myDict={
                 "name":self.name,
                 "level":self.level,
                 "totaltime":self.totalTime,
             }
-        # with open("user/{}.json".format(self.name),"w") as json_file:
-        #     json.dump(myDict,json_file,indent=4)
-
-        with open("user/{}.json".format(self.name),"r") as json_file:
-            data=json.load(json_file)
-            self.level=data["level"]
-            self.totalTime=data["totaltime"]
+            with open("user/{}.json".format(self.name),"w") as json_file:
+                  json.dump(myDict,json_file,indent=4)
+        else:
+            with open("user/{}.json".format(self.name),"r") as json_file:
+                data=json.load(json_file)
+                self.level=data["level"]
+                self.totalTime=data["totaltime"]
 
     def registerUserStat(self,lastlevel,passedtime):
         my_file=open("user/{}.json".format(self.name),"r")
