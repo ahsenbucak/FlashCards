@@ -16,7 +16,7 @@ class GameWindow(QtWidgets.QMainWindow):
         self.true_button.clicked.connect(self.true_button_function)
         self.false_button.clicked.connect(self.false_button_fuction)
         self.exit_button.clicked.connect(self.exit)
-        self.level_label.setText("LEVEL"+str(self.game.level))
+        self.level_label.setText("LEVEL "+str(self.game.level))
         self.words_level.setProperty('Value', str(self.game.true_number))
         self.timer_
         self.show()
@@ -35,7 +35,7 @@ class GameWindow(QtWidgets.QMainWindow):
         self.cards.setStyleSheet("border-color: rgb(170, 85, 0);\nbackground-color:rgb(5, 119, 161);\nborder-style: solid;\nborder-width: 3px;\nborder-radius:50px;")
         self.true_button.setEnabled(False)
         self.false_button.setEnabled(False)
-        self.words_level.setProperty('Value',self.game.true_number)
+        self.words_level.setProperty('value',self.game.true_number)
         self.words.setText(self.word_nl)
         self.true_score.setText(str(self.true_num))
         self.total_try.setText(str(self.totalTry_num))

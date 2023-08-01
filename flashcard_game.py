@@ -34,9 +34,9 @@ class Game:
 
     def show_words(self):
         if self.true_number==20:
-            self.object.level +=1
+            self.object.level =int(self.object.level) + 1
             self.totalTime()
-            self.object.registerUserStat(self.level, self.total_time)
+            self.object.registerUserStat(self.object.level, self.total_time)
             self.starting_time()
             self.word_list=self.words()
             self.true_number=0
