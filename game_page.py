@@ -56,7 +56,6 @@ class GameWindow(QtWidgets.QMainWindow):
             self.en_word(self.word_en)
         self.count -=1
 
-
     def timer_(self):
         self.timer=QTimer(self)
         self.timer.timeout.connect(self.update)
